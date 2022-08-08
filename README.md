@@ -3,11 +3,20 @@
 #### Training ML Models with NVIDIA GPU vs CPU
 #### Don Irwin
 
+
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/cuda_splash.png?raw=true"
   alt="pod count"
   title="pod count"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+- [Environmental requirements:](#environmental-requirements)
+- [Getting GPU training to work:  -- be prepared to spend some hours on this.](#getting-gpu-training-to-work-----be-prepared-to-spend-some-hours-on-this)
+- [How to run project:](#how-to-run-project)
+- [Test history:](#test-history)
+- [Training Results CPU vs GPU Train Time:](#training-results-cpu-vs-gpu-train-time)
+- [CPU Activity During CPU training and GPU Training:](#cpu-activity-during-cpu-training-and-gpu-training)
+- [NVIDIA GPU Activity During CPU Train and GPU Train:](#nvidia-gpu-activity-during-cpu-train-and-gpu-train)
 
 
 #### Background:  

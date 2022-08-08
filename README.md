@@ -24,6 +24,9 @@ The project will run **without** the NVIDIA cuda tools, but it will be very slow
 
 ### Getting GPU training to work:  -- be prepared to spend some hours on this.  
 
+Some resources on this subject:  
+https://tuneman7.github.io/cuda_notes.html  
+
 * Have an NVIDIA graphics card or device which is compatible with NVIDIA’s CUDA package.  
 * Install NVIDA drivers.  
 * Install the CUDA packages / tools.  

@@ -48,6 +48,11 @@ echo "**********************************"
             export all_dependencies=0
         fi  
 
+        if [ "$poetry_present" -ne 0 ]; then
+            echo "Poetry is not installed."
+            export all_dependencies=0
+        fi  
+
         # if [ "$bozo_present" -ne 0 ]; then
         #     echo "Bozo not installed."
         #     export all_dependencies=0
@@ -56,7 +61,6 @@ echo "**********************************"
         echo "**********************************"
         return
   fi
-
 
 export REDIS_SERVER=localhost
 
@@ -571,7 +575,7 @@ echo "*                               *"
 echo "*                               *"
 echo "*********************************"
 
-#k6 run load_local.js
+k6 run load_local.js
 
 echo "*********************************"
 echo "*  KILLING                      *"
@@ -604,9 +608,12 @@ echo "*                                                     *"
 echo "*******************************************************"
 
 
-#minikube stop
+minikube stop
 
 unset DOCKER_TLS_VERIFY
 unset DOCKER_HOST
 unset DOCKER_CERT_PATH
 unset DOCKER_MACHINE_NAME
+
+deactivate
+rm -rf ./myproj

@@ -9,6 +9,8 @@ minikube > /dev/null
 export minikube_present=$?
 k6 > /dev/null
 export k6_present=$?
+poetry --version /dev/null
+export poetry_present=$?
 
 all_dependencies=1
 
@@ -32,6 +34,13 @@ all_dependencies=1
     echo "Minikube is not installed."
     export all_dependencies=0
   fi  
+
+  if [ "$poetry_present" -ne 0 ]; then
+    echo "Poetry is not installed."
+    export all_dependencies=0
+  fi  
+
+
 
 #     bozo
 #     bozo_present=$?

@@ -3,6 +3,35 @@
 deactivate
  . setup_venv.sh
 clear
+
+
+
+while true; do
+
+        echo "*********************************"
+        echo "*                               *"
+        echo "* The model directory is not    *"
+        echo "* present.                      *"
+        echo "*   Press \"D\" to download the   *"
+        echo "*   Pre-trained model.          *"
+        echo "*   Press \"T\" to train          *"
+        echo "*   The model locally.          *"        
+        echo "*                               *"        
+        echo "*********************************"
+
+
+    read -p "Do you wish to download or train? [D/T]:" dt
+    case $dt in
+        [Tt]* )  break;;
+        [Dd]* ) gdown https://drive.google.com/drive/folders/1UHr84Wk0Om5igMP510QV4hmmRUAuslmK?usp=sharing -O ./distilbert-base-uncased-finetuned-sst2 --folder ;return;;
+        * ) echo "Please answer \"d\" or \"t\".";;
+    esac
+done        
+
+
+
+
+
  is_cuda_available=$(python3 is_cuda_available.py)
  echo ${is_cuda_available}
 
@@ -15,6 +44,7 @@ if [ ! "$is_cuda_available"=="True" ]; then
         echo "*   You can still the model on  *"
         echo "*   CPU, but it will be         *"
         echo "*    VERY SLOW                  *"
+        echo "*                               *"        
         echo "*********************************"
         while true; do
             read -p "Do you still wish to run training [y/n]:" yn
@@ -44,6 +74,7 @@ cp ${latestdir}* ./distilbert-base-uncased-finetuned-sst2/
 
 #delete the checkpoints
 rm -rf ./distilbert-base-uncased-finetuned-sst2/checkpoint*
+
 
 deactivate
 

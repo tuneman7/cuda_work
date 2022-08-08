@@ -16,13 +16,21 @@ This project utilizies the DistilBertForSequenceClassification sentiment analysi
 
 It downloads, or trains the model then serves it within a FASAPI container and runs K6 load testing against a minikube instance.
 
-### Environmental requirements:  
+### Environmental requirements:   
 
-Docker, Python3.10-venv, poetry, minikube, and K6.  The run-script should check dependencies and alert the user if any dependencies are missing.
+Docker, Python3.10-venv, poetry, minikube, and K6.  The run-script should check dependencies and alert the user if any dependencies are missing.  
 
-### Test history:   
+The project will run **without** the NVIDIA cuda tools, but it will be very slow, because it will use the CPU to train the model.  
 
-This has been tested on Linux Ubuntu 22.04 LTS only.
+### Getting GPU training to work:  -- be prepared to spend some hours on this.  
+
+* Have an NVIDIA graphics card or device which is compatible with NVIDIA’s CUDA package.  
+* Install NVIDA drivers.  
+* Install the CUDA packages / tools.  
+* Test that pytorch can “see” the graphics card and do its work on it: 
+. setup_venv.sh  
+python3 is_cuda_available.py  
+python3 get_cuda_info.py  
 
 ### How to run project:   
 git clone https://github.com/tuneman7/cuda_work  
@@ -30,6 +38,26 @@ cd cuda_work
 . run.sh  
 
 Then follow prompts.  
+
+### Test history:   
+
+This has been tested on Linux Ubuntu 22.04 LTS only, with the following system specifications:   
+
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/system_information.png?raw=true"
+  alt="system information"
+  title="system information"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/graphic_card_information.png?raw=true"
+  alt="graphic card information"
+  title="graphic card information"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
+
+
+
 
 ### Training Results CPU vs GPU Train Time:   
 

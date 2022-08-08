@@ -111,15 +111,16 @@ echo "*********************************"
 
 DIRECTORY="./distilbert-base-uncased-finetuned-sst2/"
 
-export venv_activated=0
+venv_activated=0
 
 if [ ! -d "$DIRECTORY" ]; then
   . train_venv_gpu.sh
+   venv_activated=1
 fi
 
 
 if [ $venv_activated == 0 ]; then
-. setup_venv.sh
+    . setup_venv.sh
 fi
 
 

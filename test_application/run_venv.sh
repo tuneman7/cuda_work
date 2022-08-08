@@ -1,12 +1,62 @@
 #!/bin/bash
 
+. check_deps.sh > output.txt
+rm output.txt
+
+clear
+
 echo "**********************************"
 echo "* U.C. Berkeley MIDS W255        *"
 echo "* Summer 2022                    *"
 echo "* Instructor: James York Winegar *"
 echo "* Student: Don Irwin             *"
-echo "* project Project Submission       *"
+echo "* Independent Training Exercise  *"
 echo "**********************************"
+
+echo "**********************************"
+echo "* CHECKING ALL DEPENDENCIES      *"
+echo "* Python Virtual Environments    *"
+echo "* Poetry, Docker, K6, & Minikube *"
+echo "**********************************"
+
+
+  if [ "$all_dependencies" -ne 1 ]; then
+
+        echo "**********************************"
+        echo "* Not all depdencies were met    *"
+        echo "* Please install dependencies    *"
+        echo "* and try again.                 *"
+        echo "**********************************"
+
+        if [ "$k6_present" -ne 0 ]; then
+            echo "K6 is not installed."
+            export all_dependencies=0
+        fi
+
+        if [ "$python_venv" -ne 0 ]; then
+            echo "Python Virtual Environments are not installed."
+            export all_dependencies=0
+        fi
+
+        if [ "$docker_present" -ne 0 ]; then
+            echo "Docker is not installed."
+            export all_dependencies=0
+        fi  
+
+        if [ "$minikube_present" -ne 0 ]; then
+            echo "Minikube is not installed."
+            export all_dependencies=0
+        fi  
+
+        # if [ "$bozo_present" -ne 0 ]; then
+        #     echo "Bozo not installed."
+        #     export all_dependencies=0
+        # fi 
+        echo "**********************************"
+        echo "**********************************"
+        return
+  fi
+
 
 export REDIS_SERVER=localhost
 
@@ -521,7 +571,7 @@ echo "*                               *"
 echo "*                               *"
 echo "*********************************"
 
-k6 run load_local.js
+#k6 run load_local.js
 
 echo "*********************************"
 echo "*  KILLING                      *"
@@ -547,5 +597,16 @@ echo "* COMPLETE K6 TESTING                                 *"
 echo "*                                                     *"
 echo "*******************************************************"
 
-minikube stop
+echo "*******************************************************"
+echo "*                                                     *"
+echo "* Minikube stop and unset variables                   *"
+echo "*                                                     *"
+echo "*******************************************************"
 
+
+#minikube stop
+
+unset DOCKER_TLS_VERIFY
+unset DOCKER_HOST
+unset DOCKER_CERT_PATH
+unset DOCKER_MACHINE_NAME

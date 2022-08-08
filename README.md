@@ -56,19 +56,13 @@ https://tuneman7.github.io/cuda_notes.html
 * Install the CUDA packages / tools.  
 * Test that pytorch can “see” the graphics card and do its work on it:  
 ```
-git clone https://github.com/tuneman7/cuda_work  && cd cuda_work/test_application && . setup_venv.sh && python3 is_cuda_available.py && python3 get_cuda_info.py   && deactivate && rm -rf myproj && cd ./../../ && rm -rf cuda_work 
+git clone https://github.com/tuneman7/cuda_work  && . ./cuda_work/test_python_cuda.sh
 ```
 OR 
 ```
 git clone https://github.com/tuneman7/cuda_work 
-cd cuda_work/test_application  
-. setup_venv.sh  
-python3 is_cuda_available.py  
-python3 get_cuda_info.py  
-deactivate
-rm -rf myproj 
-cd ./../../ 
-rm -rf cuda_work 
+cd cuda_work
+. test_python_cuda.sh  
 ```
 
   <img

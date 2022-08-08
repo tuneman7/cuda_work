@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#get out of a viritual environment if we are in one
+deactivate
 . check_deps.sh > output.txt
 rm output.txt
 

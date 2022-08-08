@@ -1,0 +1,12 @@
+Enabling notebook extension jupyter-js-widgets/extension...
+      - Validating: OK
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate data-science-stack-2.9.0
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate

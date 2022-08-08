@@ -12,7 +12,7 @@
 
 #### Background:  
 
-This project utilizies the DistilBertForSequenceClassification sentiment analysis model which is inside of the "glue" dataset.   
+This project utilizes the DistilBertForSequenceClassification sentiment analysis model which is inside of the "glue" dataset.   
 
 It downloads, or trains the model then serves it within a FASAPI container and runs K6 load testing against a minikube instance.
 
@@ -34,6 +34,12 @@ https://tuneman7.github.io/cuda_notes.html
 . setup_venv.sh  
 python3 is_cuda_available.py  
 python3 get_cuda_info.py  
+
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/layers-between-ai-application-and-gpu.jpg?raw=true"
+  alt="pod count"
+  title="pod count"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 ### How to run project:   
 git clone https://github.com/tuneman7/cuda_work  

@@ -27,7 +27,7 @@ The project will run **without** the NVIDIA cuda tools, but it will be very slow
 * Have an NVIDIA graphics card or device which is compatible with NVIDIA’s CUDA package.  
 * Install NVIDA drivers.  
 * Install the CUDA packages / tools.  
-* Test that pytorch can “see” the graphics card and do its work on it: 
+* Test that pytorch can “see” the graphics card and do its work on it:  
 . setup_venv.sh  
 python3 is_cuda_available.py  
 python3 get_cuda_info.py  

@@ -74,7 +74,7 @@ echo "*********************************"
 
 DIRECTORY="./distilbert-base-uncased-finetuned-sst2/"
 
-if [ -d "$DIRECTORY" ]; then
+if [ ! -d "$DIRECTORY" ]; then
   . train_venv_gpu.sh
 fi
 

@@ -110,7 +110,16 @@ echo "* Running app locally poetry    *"
 echo "*   poetry run pytest -vv -s    *"
 echo "*                               *"
 echo "*********************************"
-#stop the image if it was running
+
+echo "*********************************"
+echo "*  killing the virtual env      *"
+echo "* so it does not get copied     *"
+echo "*   to the container            *"
+echo "*                               *"
+echo "*********************************"
+
+deactivate
+rm -rf ./myproj
 
 echo "*********************************"
 echo "*  STARTING                     *"
@@ -531,5 +540,4 @@ echo "*                                                     *"
 echo "*******************************************************"
 
 minikube stop
-deactivate
-rm -rf ./myproj
+

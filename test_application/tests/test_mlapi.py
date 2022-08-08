@@ -32,25 +32,25 @@ def test_predict():
      assert response.json()["predictions"][1][1]["label"] == "POSITIVE"
      assert (
             assert_almost_equal(
-                response.json()["predictions"][0][0]["score"], 0.883, decimal=3
+                response.json()["predictions"][0][0]["score"], 0.971, decimal=3
             )
             is None
         )
      assert (
             assert_almost_equal(
-                response.json()["predictions"][0][1]["score"], 0.116, decimal=3
+                response.json()["predictions"][0][1]["score"], 0.028, decimal=3
             )
             is None
         )
      assert (
             assert_almost_equal(
-                response.json()["predictions"][1][0]["score"], 0.004, decimal=3
+                response.json()["predictions"][1][0]["score"], 0.001, decimal=3
             )
             is None
         )
      assert (
             assert_almost_equal(
-                response.json()["predictions"][1][1]["score"], 0.996, decimal=3
+                response.json()["predictions"][1][1]["score"], 0.998, decimal=3
             )
             is None
         )

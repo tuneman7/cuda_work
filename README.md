@@ -51,6 +51,8 @@ GPU training takes 17 minutes, CPU train time takes 7 hours.
   title="cpu during cpu training"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
+  * CPU is not much utilized when training with the GPU.
+  
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/cpu_gpu_train_profile.png?raw=true"
   alt="cpu during gpu training"

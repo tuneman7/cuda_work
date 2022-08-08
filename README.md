@@ -20,11 +20,9 @@
 
 ### How to run project:   
 
-*  
 ```git clone https://github.com/tuneman7/cuda_work  && cd cuda_work && . run.sh  ```  
 OR  
 
-*  
 ```  
 git clone https://github.com/tuneman7/cuda_work  
 cd cuda_work  

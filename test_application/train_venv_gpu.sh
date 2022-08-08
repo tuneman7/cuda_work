@@ -73,7 +73,7 @@ python ./trainer/train.py
 #cp ${latestdir}* ./distilbert-base-uncased-finetuned-sst2/
 
 #delete the checkpoints
-#rm -rf ./distilbert-base-uncased-finetuned-sst2/checkpoint*
+rm -rf ./distilbert-base-uncased-finetuned-sst2/checkpoint*
 
 
 deactivate

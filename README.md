@@ -25,11 +25,11 @@ Docker, Python3.10-venv, poetry, minikube, and K6.  The run-script should check 
 This has been tested on Linux Ubuntu 22.04 LTS only.
 
 ### How to run project:   
-git clone https://github.com/tuneman7/cuda_work
-cd cuda_work
-. run.sh
+git clone https://github.com/tuneman7/cuda_work  
+cd cuda_work  
+. run.sh  
 
-Then follow prompts.
+Then follow prompts.  
 
 ### Training Results CPU vs GPU Train Time:   
 

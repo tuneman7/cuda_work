@@ -122,6 +122,13 @@ deactivate
 rm -rf ./myproj
 
 echo "*********************************"
+echo "*  run a poetry install         *"
+echo "*                               *"
+echo "*********************************"
+
+poetry install
+
+echo "*********************************"
 echo "*  STARTING                     *"
 echo "* Docker stopping and rebuild   *"
 echo "*                               *"

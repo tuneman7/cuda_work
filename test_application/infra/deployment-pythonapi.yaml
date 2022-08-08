@@ -14,9 +14,9 @@ spec:
             app: pythonapi
       spec:
          containers:
-            - name: w255-final-don-irwin
+            - name: w255-project-don-irwin
               imagePullPolicy: Never
-              image: w255_final_don_irwin:latest
+              image: w255_project_don_irwin:latest
               ports:
               - containerPort: 8000
               readinessProbe:

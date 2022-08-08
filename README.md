@@ -39,7 +39,7 @@ python3 get_cuda_info.py
   src="https://github.com/tuneman7/cuda_work/blob/main/images/layers-between-ai-application-and-gpu.jpg?raw=true"
   alt="pod count"
   title="pod count"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  style="display: inline-block; margin: 0 auto; max-width: 250px">
 
 ### How to run project:   
 git clone https://github.com/tuneman7/cuda_work  
@@ -64,8 +64,6 @@ This has been tested on Linux Ubuntu 22.04 LTS only, with the following system s
   title="graphic card information"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
-
-
 
 
 ### Training Results CPU vs GPU Train Time:   

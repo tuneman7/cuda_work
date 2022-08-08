@@ -1,5 +1,11 @@
 #check viritual environments:
 
+unset DOCKER_TLS_VERIFY
+unset DOCKER_HOST
+unset DOCKER_CERT_PATH
+unset DOCKER_MACHINE_NAME
+
+
 python3 -m venv testing > /dev/null
 export python_venv=$?
 rm -rf testing

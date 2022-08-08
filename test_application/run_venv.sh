@@ -117,7 +117,10 @@ if [ ! -d "$DIRECTORY" ]; then
   . train_venv_gpu.sh
 fi
 
+if [ "$venv_activated" == 0 ]; then
 . setup_venv.sh
+fi
+
 
 echo "*********************************"
 echo "*                               *"

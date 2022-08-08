@@ -9,14 +9,24 @@
   alt="pod count"
   title="pod count"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
-
+  
+- [How to run project:](#how-to-run-project)
 - [Environmental requirements:](#environmental-requirements)
 - [Getting GPU training to work:  -- be prepared to spend some hours on this.](#getting-gpu-training-to-work-----be-prepared-to-spend-some-hours-on-this)
-- [How to run project:](#how-to-run-project)
 - [Test history:](#test-history)
 - [Training Results CPU vs GPU Train Time:](#training-results-cpu-vs-gpu-train-time)
 - [CPU Activity During CPU training and GPU Training:](#cpu-activity-during-cpu-training-and-gpu-training)
 - [NVIDIA GPU Activity During CPU Train and GPU Train:](#nvidia-gpu-activity-during-cpu-train-and-gpu-train)
+
+### How to run project:   
+
+git clone https://github.com/tuneman7/cuda_work  && cd cuda_work && . run.sh
+
+git clone https://github.com/tuneman7/cuda_work  
+cd cuda_work  
+. run.sh  
+
+Then follow prompts.  
 
 
 #### Background:  
@@ -55,16 +65,6 @@ python3 get_cuda_info.py
   alt="pod count"
   title="pod count"
   style="display: inline-block; margin: 0 auto; max-width: 250px">
-
-### How to run project:   
-
-git clone https://github.com/tuneman7/cuda_work  && cd cuda_work && . run.sh
-
-git clone https://github.com/tuneman7/cuda_work  
-cd cuda_work  
-. run.sh  
-
-Then follow prompts.  
 
 ### Test history:   
 

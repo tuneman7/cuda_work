@@ -6,7 +6,6 @@ echo "*  Using Port 8000              *"
 echo "*                               *"
 echo "*********************************"
 
-export MODEL_PATH="./../distilbert-base-uncased-finetuned-sst2"
 
 . run_redis.sh
 

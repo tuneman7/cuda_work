@@ -60,3 +60,22 @@ GPU training takes 17 minutes, CPU train time takes 7 hours.
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 
+### NVIDIA GPU Activity During CPU Train and GPU Train:   
+
+* GPU processing is negligible and memory is hardly used during CPU training.
+
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/nvidia_profile_CPU.png?raw=true"
+  alt="Nvidia during CPU training"
+  title="Nvidia during CPU training"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
+  * GPU processing is at 100% and python consumes memory during GPU training.
+  
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/nvidia_profile_CPU.png?raw=true"
+  alt="Nvidia during GPU training"
+  title="Nvidia during GPU training"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
+

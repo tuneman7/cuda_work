@@ -533,7 +533,7 @@ echo "*********************************"
 echo "*   Expected                    *"
 echo "*********************************"
 
-echo "good_return_codes=5000"
+echo "good_return_codes=4800"
 echo "bad_return_codes=5"
 
 echo "*********************************"

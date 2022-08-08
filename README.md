@@ -78,13 +78,18 @@ This has been tested on Linux Ubuntu 22.04 LTS only, with the following system s
 ### Training Results CPU vs GPU Train Time:   
 
 GPU training takes 17 minutes, CPU train time takes 7 hours.  
-* We could perform 24 GPU trainings of the model in the time it takes the CPU to train the model once.
+
+* We could perform 24 GPU trainings of the model in the time it takes the CPU to train the model once.  
+
+* CPU training time 7 hours.
 
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/CPU_train_time.png?raw=true"
   alt="cpu train time"
   title="cpu train time"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
+  
+* GPY training time @ 17 minutes.
   
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/gpu_train_time.png?raw=true"

@@ -111,6 +111,8 @@ echo "*********************************"
 
 DIRECTORY="./distilbert-base-uncased-finetuned-sst2/"
 
+export venv_activated=0
+
 if [ ! -d "$DIRECTORY" ]; then
   . train_venv_gpu.sh
 fi
@@ -277,7 +279,12 @@ echo "*********************************"
 
 pid_to_kill=$(lsof -t -i :8000 -s TCP:LISTEN)
 
-sudo kill ${pid_to_kill}
+  if [ "$pid_to_kill" -ne 0 ]; then
+    sudo kill ${pid_to_kill}
+  fi
+
+
+
 
 echo "kubectl port-forward -n w255 service/frontend 8000:8000 > output.txt &"
 kubectl port-forward -n w255 service/frontend 8000:8000 > output.txt & 

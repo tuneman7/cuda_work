@@ -76,5 +76,5 @@ python ./trainer/train.py
 rm -rf ./distilbert-base-uncased-finetuned-sst2/checkpoint*
 
 
-deactivate
+export venv_activated=1
 

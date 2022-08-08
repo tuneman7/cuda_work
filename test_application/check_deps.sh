@@ -50,3 +50,4 @@ all_dependencies=1
 #     export all_dependencies=0
 #   fi  
 
+rm output.txt

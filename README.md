@@ -1,7 +1,7 @@
-### U.C. Berkeley MIDS
-### Summer 2022
-### Training ML Models with NVIDIA GPU vs CPU
-
+#### U.C. Berkeley MIDS
+#### Summer 2022
+#### Training ML Models with NVIDIA GPU vs CPU
+#### Don Irwin
 
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/cuda_splash.png?raw=true"

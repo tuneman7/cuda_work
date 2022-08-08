@@ -19,24 +19,6 @@ IMAGE_NAME=w255_project_don_irwin
 APP_NAME=w255_project_don_irwin
 DOCKER_FILE=Dockerfile.255project
 
-echo "*********************************"
-echo "*                               *"
-echo "* Recycle kubernetes            *"
-echo "*                               *"
-echo "*********************************"
-
-minikube stop
-
-minikube start --kubernetes-version=v1.22.6 --memory 8192 --cpus 4
-
-sleep 1
-
-echo "*********************************"
-echo "*                               *"
-echo "* finished recycle k8           *"
-echo "*                               *"
-echo "*********************************"
-
 
 echo "*********************************"
 echo "*                               *"
@@ -150,6 +132,25 @@ echo "docker stop ${APP_NAME}"
 docker stop ${APP_NAME}
 echo "docker rm ${APP_NAME}"
 docker rm ${APP_NAME}
+
+echo "*********************************"
+echo "*                               *"
+echo "* Recycle kubernetes            *"
+echo "*                               *"
+echo "*********************************"
+
+minikube stop
+
+minikube start --kubernetes-version=v1.22.6 --memory 8192 --cpus 4
+
+sleep 1
+
+echo "*********************************"
+echo "*                               *"
+echo "* finished recycle k8           *"
+echo "*                               *"
+echo "*********************************"
+
 
 #Output images to the LOCAL minicube dealio -- rather than the default.
 echo "Point shell output to minikube docker"

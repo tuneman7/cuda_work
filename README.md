@@ -54,6 +54,7 @@ https://tuneman7.github.io/cuda_notes.html
 * Have an NVIDIA graphics card or device which is compatible with NVIDIA’s CUDA package.  
 * Install NVIDA drivers.  
 * Install the CUDA packages / tools.  
+* Look at or adapt the following files: install_cuda.sh , nvidia_docker_install.sh
 * Test that pytorch can “see” the graphics card and do its work on it:  
 ```
 git clone https://github.com/tuneman7/cuda_work  && . ./cuda_work/test_python_cuda.sh

@@ -71,4 +71,5 @@ trainer = Trainer(
 
 trainer.train()
 trainer.evaluate()
+trainer.save_model()
 #trainer.push_to_hub()

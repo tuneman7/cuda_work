@@ -64,16 +64,16 @@ rm -rf ./distilbert-base-uncased-finetuned-sst2/
 python ./trainer/train.py
 
 #The latest directory will contain our files.
-latestdir=$(ls -td ./distilbert-base-uncased-finetuned-sst2/*/ | head -1)
+#latestdir=$(ls -td ./distilbert-base-uncased-finetuned-sst2/*/ | head -1)
 
 
-echo ${latestdir}
+#echo ${latestdir}
 
 #copy the model into the root
-cp ${latestdir}* ./distilbert-base-uncased-finetuned-sst2/
+#cp ${latestdir}* ./distilbert-base-uncased-finetuned-sst2/
 
 #delete the checkpoints
-rm -rf ./distilbert-base-uncased-finetuned-sst2/checkpoint*
+#rm -rf ./distilbert-base-uncased-finetuned-sst2/checkpoint*
 
 
 deactivate

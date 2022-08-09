@@ -15,11 +15,11 @@
 
 
 
-  <img
+  <a href="https://www.youtube.com/watch?v=GAvBgYGeKNM" target="https://www.youtube.com/watch?v=GAvBgYGeKNM"><img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/cuda_splash.png?raw=true"
-  alt="pod count"
-  title="pod count"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  alt="video of thing"
+  title="video of thing"
+  style="display: inline-block; margin: 0 auto; max-width: 300px"></a>
 
 
 ### How to run project:   

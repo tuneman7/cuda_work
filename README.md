@@ -1,11 +1,11 @@
-#### U.C. Berkeley MIDS
 #### Summer 2022
 #### Training ML Models with NVIDIA GPU vs CPU
 #### Don Irwin
 
 
-  
 - [How to run project:](#how-to-run-project)
+- [Background:](#background)
+- [CPU and  GPU working together in AI frameworks:](#cpu-and--gpu-working-together-in-ai-frameworks)
 - [Environmental requirements:](#environmental-requirements)
 - [Getting GPU training to work:  -- be prepared to spend some hours on this.](#getting-gpu-training-to-work-----be-prepared-to-spend-some-hours-on-this)
 - [Test history:](#test-history)

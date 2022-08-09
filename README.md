@@ -42,7 +42,7 @@ Then follow prompts.
 
 This project utilizes the DistilBertForSequenceClassification sentiment analysis model which is inside of the "glue" dataset.   
 
-It downloads, or trains the model then serves it within a FASAPI container and runs K6 load testing against a minikube instance.
+It downloads, or trains the model then serves it within a docker container with FASAPI, within a minikube cluster, that also contains a redis container,  and runs K6 load testing against a minikube instance.
 
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/the_pipeline.png?raw=true"

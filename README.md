@@ -44,6 +44,12 @@ This project utilizes the DistilBertForSequenceClassification sentiment analysis
 
 It downloads, or trains the model then serves it within a FASAPI container and runs K6 load testing against a minikube instance.
 
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/the_pipeline.png?raw=true"
+  alt="pod count"
+  title="pod count"
+  style="display: inline-block; margin: 0 auto; max-width: 250px">
+
 ### Environmental requirements:   
 
 Docker, Python3.10-venv, poetry, minikube, and K6.  The run-script should check dependencies and alert the user if any dependencies are missing.  

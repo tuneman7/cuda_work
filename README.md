@@ -38,7 +38,7 @@ cd cuda_work
 Then follow prompts.  
 
 
-#### Background:  
+### Background:  
 
 This project utilizes the DistilBertForSequenceClassification sentiment analysis model which is inside of the "glue" dataset.   
 
@@ -46,8 +46,19 @@ It downloads, or trains the model then serves it within a FASAPI container and r
 
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/the_pipeline.png?raw=true"
-  alt="pod count"
-  title="pod count"
+  alt="Pipeline Overview"
+  title="Pipeline Overview"
+  style="display: inline-block; margin: 0 auto; max-width: 250px">
+
+### CPU and  GPU working together in AI frameworks:
+
+CPUs have larger instruction sets, allowing them to “do more things” than a GPU.  However, GPUs generally contain thousands of cores, achieve higher parallelism, and are very good with matrix multiplication, utilized by machine learning, and neural net frameworks.  Often times the CPU acts as the “controller” off-loading tasks to the GPU then persisting or evaluating the results.
+
+
+  <img
+  src="https://github.com/tuneman7/cuda_work/blob/main/images/cpu_vs_gpu.png?raw=true"
+  alt="CPU VS GPU"
+  title="CPU vs GPU"
   style="display: inline-block; margin: 0 auto; max-width: 250px">
 
 ### Environmental requirements:   

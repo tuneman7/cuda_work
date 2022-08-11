@@ -31,6 +31,8 @@ echo "**********************************"
 
         if [ "$k6_present" -ne 0 ]; then
             echo "K6 is not installed."
+            echo "visit https://k6.io/docs/getting-started/installation/"
+            echo "**********************************"
             export all_dependencies=0
         fi
 
@@ -41,11 +43,14 @@ echo "**********************************"
 
         if [ "$docker_present" -ne 0 ]; then
             echo "Docker is not installed."
+            echo "**********************************"
             export all_dependencies=0
         fi  
 
         if [ "$minikube_present" -ne 0 ]; then
             echo "Minikube is not installed."
+            echo "visit https://minikube.sigs.k8s.io/docs/start/"
+            echo "**********************************"
             export all_dependencies=0
         fi  
 

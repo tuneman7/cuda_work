@@ -28,16 +28,32 @@ docker network create ${NET_NAME}
 
 sleep 2
 
-echo "docker run -d --name redis -p 6379:6379 redis --net ${NET_NAME}"
-docker run -d --net ${NET_NAME} --name redis -p 6379:6379 redis
-
 
 #build docker from the docker file
 echo "docker build -t ${IMAGE_NAME} -f ${DOCKER_FILE}"
 docker build -t ${IMAGE_NAME} -f ${DOCKER_FILE} .
-echo "docker run -d --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME} "
+echo "run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME}"
 #docker run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME} sleep infinity
 docker run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME}
+
+
+echo "**********************************"
+echo "* RUNNING K6 WITHOUT CACHE       *"
+echo "**********************************"
+
+. run_k6_local.sh 
+
+echo "docker run -d --name redis -p 6379:6379 redis --net ${NET_NAME}"
+docker run -d --net ${NET_NAME} --name redis -p 6379:6379 redis
+echo "docker stop ${APP_NAME}"
+docker run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME}
+
+
+echo "**********************************"
+echo "* RUNNING K6 WITH REDIS CACHE    *"
+echo "**********************************"
+
+. run_k6_local.sh 
 
 
 read -p "Press any key to complete:"

@@ -5,6 +5,7 @@ ARG APP_DIR=/app
 # Build (Prepare Environment) image
 #############
 FROM ubuntu as build
+#FROM python:3.10-slim-buster AS build
 ARG APP_DIR=/app
 
 RUN apt-get update \

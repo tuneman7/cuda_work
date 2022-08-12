@@ -78,7 +78,7 @@ export REDIS_SERVER=localhost
 IMAGE_NAME=w255_project_don_irwin
 APP_NAME=w255_project_don_irwin
 DOCKER_FILE=Dockerfile.255project
-
+#DOCKER_FILE=Dockerfile.255project_venv1
 
 echo "*********************************"
 echo "*                               *"

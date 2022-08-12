@@ -1,0 +1,54 @@
+# Base Arguements to leverage across build stages
+ARG APP_DIR=/app
+
+#############
+# Build (Prepare Environment) image
+#############
+FROM ubuntu as build
+ARG APP_DIR=/app
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    git \
+    python3-pip \
+    python-setuptools \
+    python-dev-is-python3 \
+  && rm -rf /var/lib/apt/lists/*
+  
+RUN apt-get update\
+  && apt-get install -y python3.10-venv
+
+RUN pip3 install --upgrade pip
+RUN pip3 install 'ipython<6'
+
+
+# change work directory for where our app will live
+WORKDIR ${APP_DIR}
+
+# Copy over the venv including any symbolic links, do not install development/testing libraries when install poetry dependencies
+COPY  .  ./
+
+RUN pip3 install -r requirements.txt
+
+
+#COPY setup_on_ubuntu_docker.sh setup_on_ubuntu_docker.sh
+
+#############
+# Deployment image
+#############
+FROM ubuntu as run
+ARG APP_DIR
+
+COPY --from=build ${APP_DIR}/ ${APP_DIR}/
+ENV PATH ${APP_DIR}:$PATH
+COPY  . ./
+
+#below unnecessary utilizing environment variable
+#copy the main.py with the reference to the non-local redis server
+#COPY  ./src/main_deploy.py ./src/main.py
+
+#HEALTHCHECK --start-period=30s CMD python -c "import requests; requests.get('http://localhost:8000/health', timeout=2)"
+#CMD ["bash","read -p \"Press any key to complete:\"]
+#CMD ["uvicorn", "mlapi.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -36,8 +36,33 @@ sleep 2
 #build docker from the docker file
 echo "docker build -t ${IMAGE_NAME} -f ${DOCKER_FILE}"
 #docker build -t ${IMAGE_NAME} -f ${DOCKER_FILE} .
+
+while true; do
+
+        echo "*********************************"
+        echo "*                               *"
+        echo "* Do you wish to build the      *"
+        echo "* docker image?                 *"
+        echo "*   Press \"B\" build             *"
+        echo "*   Press \"N\" use existing      *"
+        echo "*   image                       *"        
+        echo "*                               *"        
+        echo "*********************************"
+
+
+    read -p "Build or not? [B/N]:" bn
+    case $bn in
+        [Nn]* )  break;;
+        [Bb]* ) docker build -t ${IMAGE_NAME} -f ${DOCKER_FILE} . ; break;;
+        * ) echo "Please answer \"b\" or \"n\".";;
+    esac
+done        
+
+
+
 echo "run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME}"
 #docker run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME} sleep infinity
+
 docker run -d --net ${NET_NAME} --name ${APP_NAME} -p 8000:8000 ${IMAGE_NAME}
 
 echo "*********************************"

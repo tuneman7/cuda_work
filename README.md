@@ -22,7 +22,10 @@
   style="display: inline-block; margin: 0 auto; max-width: 300px"></a>
 
 
-### How to run project:   
+### How to run project:  
+
+View link below.  This has been tested on Linux Ubuntu 22.04 LTS only: 
+- [Test history:](#test-history)   
 
 ```
 git clone https://github.com/tuneman7/cuda_work  && cd cuda_work && . run.sh  

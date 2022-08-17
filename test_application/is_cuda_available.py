@@ -1,7 +1,7 @@
 import torch
 
 use_cuda = torch.cuda.is_available()
-
+returner = 0
 if use_cuda == True:
    print("********************")
    print(" CUDA IS AVAILABLE  ")
@@ -9,5 +9,7 @@ if use_cuda == True:
 else:
    print("*******************")
    print(" NO CUDA AVAILABLE ")
-   PRINT("*******************")
+   print("*******************")
+   returner = 1
 print(use_cuda)
+

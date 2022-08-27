@@ -56,6 +56,8 @@ echo "**********************************"
 
         if [ "$poetry_present" -ne 0 ]; then
             echo "Poetry is not installed."
+            echo "visit https://python-poetry.org/docs/"
+            echo "**********************************"
             export all_dependencies=0
         fi  
 

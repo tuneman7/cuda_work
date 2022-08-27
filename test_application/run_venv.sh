@@ -42,7 +42,7 @@ echo "**********************************"
         fi
 
         if [ "$docker_present" -ne 0 ]; then
-            echo "Docker is not installed."
+            echo "Docker is not installed, or not running."
             echo "**********************************"
             export all_dependencies=0
         fi  

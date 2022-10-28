@@ -1,3 +1,7 @@
+import time 
+start_time = time.time()
+
+
 # %% [markdown]
 # # How to use PyTorch LSTMs for time series regression
 
@@ -16,31 +20,31 @@ df = pd.read_csv("processed_pm25.csv", index_col="created_at")
 df
 
 # %%
-import plotly.express as px
-import plotly.graph_objects as go
-import plotly.io as pio
-pio.templates.default = "plotly_white"
+# import plotly.express as px
+# import plotly.graph_objects as go
+# import plotly.io as pio
+# pio.templates.default = "plotly_white"
 
-plot_template = dict(
-    layout=go.Layout({
-        "font_size": 18,
-        "xaxis_title_font_size": 24,
-        "yaxis_title_font_size": 24})
-)
+# plot_template = dict(
+#     layout=go.Layout({
+#         "font_size": 18,
+#         "xaxis_title_font_size": 24,
+#         "yaxis_title_font_size": 24})
+# )
 
-fig = px.line(df, labels=dict(
-    created_at="Date", value="PM2.5 (ug/m3)", variable="Sensor"
-))
-fig.update_layout(
-  template=plot_template, legend=dict(orientation='h', y=1.02, title_text="")
-)
-fig.show()
-fig.write_image("pm25_data.png", width=1200, height=600)
+# fig = px.line(df, labels=dict(
+#     created_at="Date", value="PM2.5 (ug/m3)", variable="Sensor"
+# ))
+# fig.update_layout(
+#   template=plot_template, legend=dict(orientation='h', y=1.02, title_text="")
+# )
+# fig.show()
+# fig.write_image("pm25_data.png", width=1200, height=600)
 
-# %%
-fig.update_yaxes(range = [0, 60])
-fig.show()
-fig.write_image("pm25_data_zoomed.png", width=1200, height=600)
+# # %%
+# fig.update_yaxes(range = [0, 60])
+# fig.show()
+# fig.write_image("pm25_data_zoomed.png", width=1200, height=600)
 
 # %% [markdown]
 # ## Create the target variable
@@ -261,7 +265,7 @@ print("Untrained test\n--------")
 test_model(test_loader, model, loss_function)
 print()
 
-for ix_epoch in range(2):
+for ix_epoch in range(5):
     print(f"Epoch {ix_epoch}\n---------")
     train_model(train_loader, model, loss_function, optimizer=optimizer)
     test_model(test_loader, model, loss_function)
@@ -298,14 +302,16 @@ for c in df_out.columns:
 
 print(df_out)
 
-# %%
-fig = px.line(df_out, labels={'value': "PM2.5 (ug/m3)", 'created_at': 'Date'})
-fig.add_vline(x=test_start, line_width=4, line_dash="dash")
-fig.add_annotation(xref="paper", x=0.75, yref="paper", y=0.8, text="Test set start", showarrow=False)
-fig.update_layout(
-  template=plot_template, legend=dict(orientation='h', y=1.02, title_text="")
-)
-fig.show()
-fig.write_image("pm25_forecast.png", width=1200, height=600)
+# # %%
+# fig = px.line(df_out, labels={'value': "PM2.5 (ug/m3)", 'created_at': 'Date'})
+# fig.add_vline(x=test_start, line_width=4, line_dash="dash")
+# fig.add_annotation(xref="paper", x=0.75, yref="paper", y=0.8, text="Test set start", showarrow=False)
+# fig.update_layout(
+#   template=plot_template, legend=dict(orientation='h', y=1.02, title_text="")
+# )
+# fig.show()
+# fig.write_image("pm25_forecast.png", width=1200, height=600)
 
 
+print("--- %s seconds ---" % (float(time.time()) - float(start_time)))
+exit()

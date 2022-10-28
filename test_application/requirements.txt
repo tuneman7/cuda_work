@@ -9,3 +9,6 @@ sklearn
 pytest==7.0
 datasets==2.0.0
 gdown
+plotly
+plotly.express
+kaleido

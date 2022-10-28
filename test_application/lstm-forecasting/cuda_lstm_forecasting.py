@@ -218,7 +218,7 @@ test_dataset = SequenceDataset(
     features=features,
     sequence_length=sequence_length
 )
-
+#wrap the data loaders onto the cuda device
 train_loader = DeviceDataLoader(DataLoader(train_dataset, batch_size=batch_size, shuffle=True),device)
 test_loader = DeviceDataLoader(DataLoader(test_dataset, batch_size=batch_size, shuffle=False),device)
 
@@ -331,14 +331,12 @@ print()
 
 
 
-for ix_epoch in range(2):
+for ix_epoch in range(5):
     print(f"Epoch {ix_epoch}\n---------")
     train_model(train_loader, model, loss_function, optimizer=optimizer)
     test_model(test_loader, model, loss_function)
     print()
 
-print("--- %s seconds ---" % (float(time.time()) - float(start_time)))
-exit()
 
 # %% [markdown]
 # # Evaluation
@@ -349,20 +347,31 @@ def predict(data_loader, model):
     function.
     """
     output = torch.tensor([])
+    do_cuda = torch.cuda.is_available()
+    if do_cuda:
+        model.cuda()
+        output = output.to(device)
     model.eval()
-    with torch.no_grad():
-        for X, _ in data_loader:
-            y_star = model(X)
-            output = torch.cat((output, y_star), 0)
+    if do_cuda:
+        with torch.no_grad():
+            for X, _ in data_loader:
+                y_star = model(X)
+                output = torch.cat((output, y_star), 0)
+    else:
+        with torch.no_grad():
+            for X, _ in data_loader:
+                y_star = model(X)
+                output = torch.cat((output, y_star), 0)
+
     
     return output
 
 # %%
-train_eval_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False)
+train_eval_loader = DeviceDataLoader(DataLoader(train_dataset, batch_size=batch_size, shuffle=False),device)
 
 ystar_col = "Model forecast"
-df_train[ystar_col] = predict(train_eval_loader, model).numpy()
-df_test[ystar_col] = predict(test_loader, model).numpy()
+df_train[ystar_col] = predict(train_eval_loader, model).cpu().numpy()
+df_test[ystar_col] = predict(test_loader, model).cpu().numpy()
 
 df_out = pd.concat((df_train, df_test))[[target, ystar_col]]
 
@@ -381,3 +390,5 @@ print(df_out)
 # fig.show()
 # fig.write_image("pm25_forecast.png", width=1200, height=600)
 
+print("--- %s seconds ---" % (float(time.time()) - float(start_time)))
+exit()

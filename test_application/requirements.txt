@@ -12,3 +12,4 @@ gdown
 plotly
 plotly.express
 kaleido
+pytorch-forecasting

@@ -14,7 +14,7 @@
 - [NVIDIA GPU Activity During CPU Train and GPU Train:](#nvidia-gpu-activity-during-cpu-train-and-gpu-train)
 
 
-
+  Click on Image Below to launch video tutorial.
   <a href="https://www.youtube.com/watch?v=GAvBgYGeKNM" target="https://www.youtube.com/watch?v=GAvBgYGeKNM"><img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/cuda_splash.png?raw=true"
   alt="video of thing"

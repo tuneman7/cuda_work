@@ -128,7 +128,7 @@ GPU training takes 17 minutes, CPU train time takes 7 hours.
   title="cpu train time"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
-* GPY training time @ 17 minutes.
+* GPU training time @ 17 minutes.
   
   <img
   src="https://github.com/tuneman7/cuda_work/blob/main/images/gpu_train_time.png?raw=true"
